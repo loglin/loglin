@@ -12,6 +12,9 @@
   "main": "dist/reporter-console.cjs.js",
   "module": "dist/reporter-console.esm.js",
   "types": "dist/reporter-console.d.ts",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "chalk": "^4.1.0",
     "loglin": "^0.0.3"

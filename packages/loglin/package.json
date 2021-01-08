@@ -12,6 +12,9 @@
   "main": "dist/loglin.cjs.js",
   "module": "dist/loglin.esm.js",
   "types": "dist/loglin.d.ts",
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   }
