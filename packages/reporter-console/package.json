@@ -1,6 +1,6 @@
 {
   "name": "@loglin/reporter-console",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "@loglin/reporter-console",
   "repository": {
     "type": "git",
@@ -14,7 +14,7 @@
   "types": "dist/reporter-console.d.ts",
   "dependencies": {
     "chalk": "^4.1.0",
-    "loglin": "^0.0.2"
+    "loglin": "^0.0.3"
   },
   "publishConfig": {
     "access": "public"
