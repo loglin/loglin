@@ -1,0 +1,9 @@
+{
+  "name": "playground",
+  "private": true,
+  "dependencies": {
+    "loglin": "0.0.1",
+    "@loglin/reporter-console": "0.0.1",
+    "@loglin/reporter-custom": "0.0.1"
+  }
+}

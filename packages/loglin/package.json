@@ -1,0 +1,15 @@
+{
+  "name": "loglin",
+  "version": "0.0.1",
+  "description": "loglin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loglin/loglin.git",
+    "directory": "packages/loglin"
+  },
+  "license": "MIT",
+  "author": "Marvin Rudolph",
+  "main": "dist/loglin.cjs.js",
+  "module": "dist/loglin.esm.js",
+  "types": "dist/loglin.d.ts"
+}

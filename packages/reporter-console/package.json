@@ -1,0 +1,19 @@
+{
+  "name": "@loglin/reporter-console",
+  "version": "0.0.1",
+  "description": "@loglin/reporter-console",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loglin/loglin.git",
+    "directory": "packages/reporter-console"
+  },
+  "license": "MIT",
+  "author": "Marvin Rudolph",
+  "main": "dist/reporter-console.cjs.js",
+  "module": "dist/reporter-console.esm.js",
+  "types": "dist/reporter-console.d.ts",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "loglin": "0.0.1"
+  }
+}
