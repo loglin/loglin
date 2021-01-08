@@ -15,5 +15,8 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "loglin": "^0.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

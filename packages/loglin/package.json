@@ -11,5 +11,8 @@
   "author": "Marvin Rudolph",
   "main": "dist/loglin.cjs.js",
   "module": "dist/loglin.esm.js",
-  "types": "dist/loglin.d.ts"
+  "types": "dist/loglin.d.ts",
+  "publishConfig": {
+    "access": "public"
+  }
 }
