@@ -12,7 +12,8 @@
     "play": "ts-node-dev --project=playground/tsconfig.json --respawn --transpile-only playground/index.ts",
     "test": "yarn build && jest",
     "lint": "eslint --ext .ts packages/*/src/**",
-    "format": "prettier --write --parser typescript \"packages/**/*.ts\""
+    "format": "prettier --write --parser typescript \"packages/**/*.ts\"",
+    "release": "yarn build --types && yarn test && yarn lerna publish"
   },
   "lint-staged": {
     "*.js": [
