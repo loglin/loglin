@@ -12,7 +12,9 @@
     "test": "yarn build && jest",
     "lint": "eslint --ext .ts packages/*/src/**",
     "format": "prettier --write --parser typescript \"packages/**/*.ts\"",
-    "release": "yarn build --types && yarn test && lerna publish"
+    "release": "yarn build --types && yarn test && lerna publish",
+    "docs": "vitepress dev docs",
+    "docs:build": "vitepress build docs"
   },
   "lint-staged": {
     "*.js": [
@@ -46,6 +48,7 @@
     "ts-jest": "^26.4.4",
     "ts-node-dev": "^1.1.1",
     "typescript": "^4.1.3",
+    "vitepress": "^0.10.7",
     "winston": "^3.3.3",
     "yorkie": "^2.0.0",
     "zlib": "^1.0.5"
