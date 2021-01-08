@@ -1,5 +1,6 @@
 import { LogLevels, LogLevel, getLevelNumber } from './levels'
 import type { Reporter, LogInfo, LogMeta, LogMessage } from './reporter'
+import { isFiltered } from './filter'
 
 export interface LoggerConfig {
   level?: LogLevels
@@ -17,7 +18,16 @@ export function createLogger(config: LoggerConfig): Logger {
   }
 
   const callReporters = (info: LogInfo) =>
-    config.reporters.map((reporter) => reporter(info))
+    config.reporters.map((reporter) => {
+      if (
+        reporter.filters &&
+        reporter.filters.length &&
+        isFiltered(reporter.filters, info)
+      )
+        return
+
+      return reporter.log(info)
+    })
 
   const levelNumber = getLevelNumber(config.level || LogLevels.Info)
   const canLog: CanLog = (minimumLevel) =>

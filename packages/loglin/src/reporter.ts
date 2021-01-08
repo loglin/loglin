@@ -17,17 +17,22 @@ export type ReporterOptions<O extends CustomReporterOptions> = O & {
   filters?: Filter[]
 }
 
-export type Reporter = (info: LogInfo) => void
+export interface Reporter {
+  log: ReporterLogFunction
+  filters?: Filter[]
+}
+
+export type ReporterLogFunction = (info: LogInfo) => void
 export type ReporterFunction<
   O extends CustomReporterOptions = CustomReporterOptions
-> = (options?: ReporterOptions<O>) => Reporter
+> = (options?: ReporterOptions<O>) => ReporterLogFunction
 
-export type CreatedReporter<O extends CustomReporterOptions> = (
-  options?: ReporterOptions<O>
-) => Reporter
+export type CreatedReporter<
+  O extends CustomReporterOptions = CustomReporterOptions
+> = (options?: ReporterOptions<O>) => Reporter
 
 export function createReporter<O extends CustomReporterOptions>(
   reporter: ReporterFunction<O>
 ): CreatedReporter<O> {
-  return (options) => reporter(options)
+  return (options) => ({ log: reporter(options), filters: options?.filters })
 }

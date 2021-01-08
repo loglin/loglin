@@ -1,4 +1,5 @@
 import { createLogger } from '../src/logger'
+import { createFilter } from '../src/filter'
 import { LogLevels } from '../src/levels'
 import { consoleReporter } from '@loglin/reporter-console'
 
@@ -54,6 +55,31 @@ describe('logger', () => {
         expect(logResult).toBe(false)
       }
     })
+  })
+
+  test('should only call reporter if logs are fatal', () => {
+    const onlyFatal = createFilter(() => {
+      return ({ level }) => level === LogLevels.Fatal
+    })
+
+    const reporter = consoleReporter({
+      filters: [onlyFatal()],
+    })
+
+    const mockedReporter = (reporter['log'] = jest.fn())
+
+    const logger = createLogger({
+      reporters: [reporter],
+    })
+
+    logger.success('Success')
+    expect(mockedReporter).not.toHaveBeenCalled()
+
+    logger.warn('Warn')
+    expect(mockedReporter).not.toHaveBeenCalled()
+
+    logger.fatal('Fatal')
+    expect(mockedReporter).toHaveBeenCalled()
   })
 })
 

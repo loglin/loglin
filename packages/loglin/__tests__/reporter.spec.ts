@@ -31,7 +31,7 @@ describe('createReporter', () => {
       }
     })
 
-    reporter()({ level: LogLevels.Fatal, message: 'Foo' })
+    reporter().log({ level: LogLevels.Fatal, message: 'Foo' })
   })
 
   test('should receive meta data', () => {
@@ -43,7 +43,7 @@ describe('createReporter', () => {
       }
     })
 
-    reporter()({
+    reporter().log({
       level: LogLevels.Success,
       message: 'It works',
       meta: customMeta,
