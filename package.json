@@ -13,7 +13,7 @@
     "test": "yarn build && jest",
     "lint": "eslint --ext .ts packages/*/src/**",
     "format": "prettier --write --parser typescript \"packages/**/*.ts\"",
-    "release": "yarn build --types && yarn test && yarn lerna publish"
+    "release": "yarn build --types && yarn test && lerna publish"
   },
   "lint-staged": {
     "*.js": [
