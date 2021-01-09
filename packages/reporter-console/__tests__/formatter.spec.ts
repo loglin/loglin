@@ -4,7 +4,7 @@ import { mergeColors } from '../src/colors'
 
 describe('createLabel', () => {
   test('should create label with default colors', () => {
-    expect(createLabel(LogLevels.Success)).toMatchSnapshot()
+    expect(createLabel(LogLevels.Success)).toMatchInlineSnapshot(`"[1m SUCCESS [22m"`)
   })
 
   test('should create label with customized colors', () => {
