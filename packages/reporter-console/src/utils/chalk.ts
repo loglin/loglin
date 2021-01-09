@@ -1,9 +1,4 @@
-import _chalk, { Chalk, ForegroundColor, BackgroundColor } from 'chalk'
-
-let chalk =
-  process.env.CI || process.env.NODE_ENV === 'test'
-    ? new _chalk.Instance({ level: 0 })
-    : _chalk
+import chalk, { Chalk, ForegroundColor, BackgroundColor } from 'chalk'
 
 type ColorCache = Record<string, Chalk>
 
