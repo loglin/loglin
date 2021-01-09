@@ -9,7 +9,7 @@
     "build": "node scripts/build.js",
     "dev": "rollup -wc",
     "play": "ts-node-dev --project=playground/tsconfig.json --respawn --transpile-only playground/index.ts",
-    "test": "yarn build && jest",
+    "test": "yarn build && jest --no-colors",
     "lint": "eslint --ext .ts packages/*/src/**",
     "format": "prettier --write --parser typescript \"packages/**/*.ts\"",
     "release": "yarn build --types && yarn test && lerna publish",

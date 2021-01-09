@@ -3,11 +3,11 @@
 exports[`formatError should format error 1`] = `
 "
 
-  [90mat [39mObject.<anonymous> ([36mpackages\\\\reporter-console\\\\__tests__\\\\utils\\\\error.spec.ts:20:24[39m)
-  [90mat [39mObject.asyncJestTest ([36mnode_modules\\\\jest-jasmine2\\\\build\\\\jasmineAsyncInstall.js:106:37[39m)
-  [90mat [39mnode_modules\\\\jest-jasmine2\\\\build\\\\queueRunner.js:45:12
-  [90mat [39mnew Promise ([36m<anonymous>[39m)
-  [90mat [39mmapper ([36mnode_modules\\\\jest-jasmine2\\\\build\\\\queueRunner.js:28:19[39m)
-  [90mat [39mnode_modules\\\\jest-jasmine2\\\\build\\\\queueRunner.js:75:41
-  [90mat [39mprocessTicksAndRejections ([36minternal/process/task_queues.js:93:5[39m)"
+  at Object.<anonymous> (packages\\\\reporter-console\\\\__tests__\\\\utils\\\\error.spec.ts:20:24)
+  at Object.asyncJestTest (node_modules\\\\jest-jasmine2\\\\build\\\\jasmineAsyncInstall.js:106:37)
+  at node_modules\\\\jest-jasmine2\\\\build\\\\queueRunner.js:45:12
+  at new Promise (<anonymous>)
+  at mapper (node_modules\\\\jest-jasmine2\\\\build\\\\queueRunner.js:28:19)
+  at node_modules\\\\jest-jasmine2\\\\build\\\\queueRunner.js:75:41
+  at processTicksAndRejections (internal/process/task_queues.js:93:5)"
 `;

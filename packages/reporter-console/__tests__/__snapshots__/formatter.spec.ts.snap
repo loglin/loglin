@@ -2,26 +2,26 @@
 
 exports[`basicFormatter should format message 1`] = `"[INFO] Info"`;
 
-exports[`createLabel should create label with customized colors 1`] = `"[48;2;255;199;212m[1m [38;2;56;74;87mSUCCESS[39m [22m[49m"`;
+exports[`createLabel should create label with customized colors 1`] = `" SUCCESS "`;
 
-exports[`createLabel should create label with default colors 1`] = `"[48;2;5;225;122m[1m [38;2;56;74;87mSUCCESS[39m [22m[49m"`;
+exports[`createLabel should create label with default colors 1`] = `" SUCCESS "`;
 
 exports[`fancyFormatter should format message if instanceof Error 1`] = `
-"[48;2;245;71;97m[1m [38;2;56;74;87mERROR[39m [22m[49m Error: Something went wrong
+" ERROR  Error: Something went wrong
 
-  [90mat [39mObject.<anonymous> ([36mpackages\\\\reporter-console\\\\__tests__\\\\formatter.spec.ts:54:18[39m)
-  [90mat [39mObject.asyncJestTest ([36mnode_modules\\\\jest-jasmine2\\\\build\\\\jasmineAsyncInstall.js:106:37[39m)
-  [90mat [39mnode_modules\\\\jest-jasmine2\\\\build\\\\queueRunner.js:45:12
-  [90mat [39mnew Promise ([36m<anonymous>[39m)
-  [90mat [39mmapper ([36mnode_modules\\\\jest-jasmine2\\\\build\\\\queueRunner.js:28:19[39m)
-  [90mat [39mnode_modules\\\\jest-jasmine2\\\\build\\\\queueRunner.js:75:41
-  [90mat [39mprocessTicksAndRejections ([36minternal/process/task_queues.js:93:5[39m)"
+  at Object.<anonymous> (packages\\\\reporter-console\\\\__tests__\\\\formatter.spec.ts:54:18)
+  at Object.asyncJestTest (node_modules\\\\jest-jasmine2\\\\build\\\\jasmineAsyncInstall.js:106:37)
+  at node_modules\\\\jest-jasmine2\\\\build\\\\queueRunner.js:45:12
+  at new Promise (<anonymous>)
+  at mapper (node_modules\\\\jest-jasmine2\\\\build\\\\queueRunner.js:28:19)
+  at node_modules\\\\jest-jasmine2\\\\build\\\\queueRunner.js:75:41
+  at processTicksAndRejections (internal/process/task_queues.js:93:5)"
 `;
 
-exports[`fancyFormatter should format message with custom colors 1`] = `"[48;2;81;209;251m[1m [38;2;255;255;255mINFO[39m [22m[49m [38;2;0;255;0mInfo[39m"`;
+exports[`fancyFormatter should format message with custom colors 1`] = `" INFO  Info"`;
 
-exports[`fancyFormatter should format message with default colors 1`] = `"[48;2;81;209;251m[1m [38;2;56;74;87mINFO[39m [22m[49m Info"`;
+exports[`fancyFormatter should format message with default colors 1`] = `" INFO  Info"`;
 
-exports[`fancyFormatter should use cached label 1`] = `"[48;2;5;225;122m[1m [38;2;56;74;87mSUCCESS[39m [22m[49m Success"`;
+exports[`fancyFormatter should use cached label 1`] = `" SUCCESS  Success"`;
 
-exports[`fancyFormatter should use cached label 2`] = `"[48;2;5;225;122m[1m [38;2;56;74;87mSUCCESS[39m [22m[49m Success"`;
+exports[`fancyFormatter should use cached label 2`] = `" SUCCESS  Success"`;
