@@ -1,5 +1,10 @@
-import chalk from 'chalk'
+import _chalk from 'chalk'
 import { chalkColor, chalkBgColor } from '../../src/utils/chalk'
+
+let chalk =
+  process.env.CI || process.env.NODE_ENV === 'test'
+    ? new _chalk.Instance({ level: 0 })
+    : _chalk
 
 describe('chalkColor', () => {
   test('should throw error if no valid color was provided', () => {

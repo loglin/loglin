@@ -2,12 +2,12 @@
 
 exports[`basicFormatter should format message 1`] = `"[INFO] Info"`;
 
-exports[`createLabel should create label with customized colors 1`] = `"[48;2;255;199;212m[1m [38;2;56;74;87mSUCCESS[39m [22m[49m"`;
+exports[`createLabel should create label with customized colors 1`] = `"[1m SUCCESS [22m"`;
 
-exports[`createLabel should create label with default colors 1`] = `"[48;2;5;225;122m[1m [38;2;56;74;87mSUCCESS[39m [22m[49m"`;
+exports[`createLabel should create label with default colors 1`] = `"[1m SUCCESS [22m"`;
 
 exports[`fancyFormatter should format message if instanceof Error 1`] = `
-"[48;2;245;71;97m[1m [38;2;56;74;87mERROR[39m [22m[49m Error: Something went wrong
+"[1m ERROR [22m Error: Something went wrong
 
   [90mat [39mObject.<anonymous> ([36mpackages\\\\reporter-console\\\\__tests__\\\\formatter.spec.ts:54:18[39m)
   [90mat [39mObject.asyncJestTest ([36mnode_modules\\\\jest-jasmine2\\\\build\\\\jasmineAsyncInstall.js:106:37[39m)
@@ -18,10 +18,10 @@ exports[`fancyFormatter should format message if instanceof Error 1`] = `
   [90mat [39mprocessTicksAndRejections ([36minternal/process/task_queues.js:93:5[39m)"
 `;
 
-exports[`fancyFormatter should format message with custom colors 1`] = `"[48;2;81;209;251m[1m [38;2;255;255;255mINFO[39m [22m[49m [38;2;0;255;0mInfo[39m"`;
+exports[`fancyFormatter should format message with custom colors 1`] = `"[1m INFO [22m Info"`;
 
-exports[`fancyFormatter should format message with default colors 1`] = `"[48;2;81;209;251m[1m [38;2;56;74;87mINFO[39m [22m[49m Info"`;
+exports[`fancyFormatter should format message with default colors 1`] = `"[1m INFO [22m Info"`;
 
-exports[`fancyFormatter should use cached label 1`] = `"[48;2;5;225;122m[1m [38;2;56;74;87mSUCCESS[39m [22m[49m Success"`;
+exports[`fancyFormatter should use cached label 1`] = `"[1m SUCCESS [22m Success"`;
 
-exports[`fancyFormatter should use cached label 2`] = `"[48;2;5;225;122m[1m [38;2;56;74;87mSUCCESS[39m [22m[49m Success"`;
+exports[`fancyFormatter should use cached label 2`] = `"[1m SUCCESS [22m Success"`;
