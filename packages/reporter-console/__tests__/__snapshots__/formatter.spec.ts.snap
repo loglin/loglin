@@ -4,8 +4,6 @@ exports[`basicFormatter should format message 1`] = `"[INFO] Info"`;
 
 exports[`createLabel should create label with customized colors 1`] = `"[1m SUCCESS [22m"`;
 
-exports[`createLabel should create label with default colors 1`] = `"[1m SUCCESS [22m"`;
-
 exports[`fancyFormatter should format message if instanceof Error 1`] = `
 "[1m ERROR [22m Error: Something went wrong
 
