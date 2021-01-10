@@ -35,7 +35,8 @@ export function formatError(error: Error) {
             .replace(/^at +/, (m) => chalk.gray(m))
             .replace(/\((.+)\)/, (_, m) => `(${chalk.cyan(m)})`)
       )
-      .join('\n')
+      .join('\n') +
+    '\n'
 
   return stack
 }
