@@ -22,7 +22,7 @@
     ],
     "*.ts": [
       "eslint",
-      "prettier --parser=typescript --write"
+      "yarn format"
     ]
   },
   "devDependencies": {
