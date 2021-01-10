@@ -1,7 +1,7 @@
 import { consoleReporter } from '../src/reporter'
 import { createFilter, LogLevels } from 'loglin'
 
-describe('consolReporter', () => {
+describe('consoleReporter', () => {
   const onlyFatal = createFilter(() => {
     return ({ level }) => level === LogLevels.Fatal
   })
