@@ -3,11 +3,7 @@
 exports[`formatError should format error 1`] = `
 "
 
-  at Object.<anonymous> (packages/reporter-console/__tests__/utils/error.spec.ts:20:24)
-  at Object.asyncJestTest (node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
-  at node_modules/jest-jasmine2/build/queueRunner.js:45:12
-  at new Promise (<anonymous>)
-  at mapper (node_modules/jest-jasmine2/build/queueRunner.js:28:19)
-  at node_modules/jest-jasmine2/build/queueRunner.js:75:41
-  at processTicksAndRejections (internal/process/task_queues.js:93:5)"
+  at line 1 (path)
+  at line 2 (path)
+"
 `;

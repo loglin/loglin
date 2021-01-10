@@ -23,6 +23,14 @@ describe('basicFormatter', () => {
 })
 
 describe('fancyFormatter', () => {
+  const getTestError = () => {
+    const error = new Error('Something went wrong')
+    error.stack =
+      'Error\n' + ['at line 1 (path)', 'at line 2 (path)'].join('\n')
+
+    return error
+  }
+
   test('should format message with default colors', () => {
     const formatter = fancyFormatter()
     expect(
@@ -47,11 +55,31 @@ describe('fancyFormatter', () => {
 
   test('should format message if instanceof Error', () => {
     const formatter = fancyFormatter()
+    const error = getTestError()
 
     expect(
       formatter({
         level: LogLevels.Error,
-        message: new Error('Something went wrong'),
+        message: error,
+      })
+    ).toMatchSnapshot()
+  })
+
+  test('should be colored message if instanceof Error and not theme color', () => {
+    const formatter = fancyFormatter({
+      colors: {
+        error: {
+          text: '#ff0000',
+        },
+      },
+    })
+
+    const error = getTestError()
+
+    expect(
+      formatter({
+        level: LogLevels.Error,
+        message: error,
       })
     ).toMatchSnapshot()
   })

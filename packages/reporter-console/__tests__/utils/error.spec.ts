@@ -17,6 +17,9 @@ describe('formatError', () => {
   })
 
   test('should format error', () => {
-    expect(formatError(new Error('Error'))).toMatchSnapshot()
+    const error = new Error('Error')
+    error.stack =
+      'Error\n' + ['at line 1 (path)', 'at line 2 (path)'].join('\n')
+    expect(formatError(error)).toMatchSnapshot()
   })
 })
