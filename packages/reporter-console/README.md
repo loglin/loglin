@@ -11,7 +11,7 @@
 
 ## License
 
-MIT
+[MIT](https://github.com/loglin/loglin/blob/main/LICENSE)
 
 [npm-img]: https://img.shields.io/npm/v/@loglin/reporter-console.svg
 [npm-url]: https://npmjs.com/package/@loglin/reporter-console

@@ -33,7 +33,7 @@ For example, you can add a reporter that logs the message to the console and ano
 
 ## License
 
-MIT
+[MIT](https://github.com/loglin/loglin/blob/main/LICENSE)
 
 [npm-img]: https://img.shields.io/npm/v/loglin.svg
 [npm-url]: https://npmjs.com/package/loglin
