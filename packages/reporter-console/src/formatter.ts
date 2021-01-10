@@ -40,13 +40,15 @@ export const fancyFormatter: FormatterFunction<FancyFormatterOptions> = createFo
 
     return ({ level, message }) => {
       const textColor = colors[level].text
-
-      let fancyMessage = isThemeTextColor(textColor)
-        ? message
-        : chalkColor(textColor)(message)
+      let fancyMessage = message
 
       if (message instanceof Error) {
-        fancyMessage += formatError(message)
+        fancyMessage =
+          (isThemeTextColor(textColor)
+            ? message.message
+            : chalkColor(textColor)(message.message)) + formatError(message)
+      } else if (!isThemeTextColor(textColor)) {
+        fancyMessage = chalkColor(textColor)(message)
       }
 
       const cachedLabel = labels[level]
