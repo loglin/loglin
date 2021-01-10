@@ -56,5 +56,13 @@
   "gitHooks": {
     "pre-commit": "lint-staged",
     "commit-msg": "node scripts/verifyCommit.js"
-  }
+  },
+  "keywords": [
+    "fast",
+    "logger",
+    "node",
+    "simple",
+    "typescript",
+    "types"
+  ]
 }

@@ -17,5 +17,16 @@
   ],
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "keywords": [
+    "fast",
+    "logger",
+    "node",
+    "simple",
+    "typescript",
+    "types",
+    "core",
+    "console",
+    "pluggable"
+  ]
 }
