@@ -7,15 +7,7 @@ export function parseStack(stack: string) {
   const lines = stack
     .split('\n')
     .splice(1)
-    .map((l) => {
-      const line = l.trim().replace('file://', '').replace(cwd, '')
-
-      if (process.env.NODE_ENV === 'test') {
-        return line.replace(/\\/g, '/')
-      }
-
-      return line
-    })
+    .map((l) => l.trim().replace('file://', '').replace(cwd, ''))
 
   return lines
 }
