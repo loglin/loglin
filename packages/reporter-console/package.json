@@ -32,5 +32,9 @@
     "reporter",
     "console",
     "fancy"
-  ]
+  ],
+  "scripts": {
+    "release": "node updateVersions && node ../../scripts/release.js",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s --commit-path ."
+  }
 }
