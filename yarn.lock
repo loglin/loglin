@@ -651,24 +651,24 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@microsoft/api-extractor-model@7.12.1":
-  version "7.12.1"
-  resolved "https://registry.yarnpkg.com/@microsoft/api-extractor-model/-/api-extractor-model-7.12.1.tgz#1f10915c434048da34e1c07845ba2623d5f23f66"
-  integrity sha512-Hw+kYfUb1gt6xPWGFW8APtLVWeNEWz4JE6PbLkSHw/j+G1hAaStzgxhBx3GOAWM/G0SCDGVJOpd5YheVOyu/KQ==
+"@microsoft/api-extractor-model@7.12.3":
+  version "7.12.3"
+  resolved "https://registry.yarnpkg.com/@microsoft/api-extractor-model/-/api-extractor-model-7.12.3.tgz#bc21f2f4bf005b753b151c674752d84c676b17b0"
+  integrity sha512-lLy1UDJOkk7nuhSdAqjlULSd/yWNrSqDnUduwPwtmUoOX3QIfeDhlV5bKmq5Tw6RBq3ydgjasThyxfj1Og15MA==
   dependencies:
     "@microsoft/tsdoc" "0.12.24"
-    "@rushstack/node-core-library" "3.35.2"
+    "@rushstack/node-core-library" "3.36.1"
 
-"@microsoft/api-extractor@^7.12.1":
-  version "7.13.0"
-  resolved "https://registry.yarnpkg.com/@microsoft/api-extractor/-/api-extractor-7.13.0.tgz#13900fc7596c29daeecd3f33ed8960cfc5250107"
-  integrity sha512-T+14VIhB91oJIett5AZ02VWYmz/01VHFWkcAOWiErIQ8AiFhJZoGqTjGxoi8ZpEEBuAj2EGVYojORwLc/+aiDQ==
+"@microsoft/api-extractor@^7.13.3":
+  version "7.13.3"
+  resolved "https://registry.yarnpkg.com/@microsoft/api-extractor/-/api-extractor-7.13.3.tgz#970de75bcc0b548b43139d787e382d2a38a9c849"
+  integrity sha512-hk40nqOk8QYs70SH5vAhTdPYrMUNm4ASNiPFoV9YiFGeiHkC0Ll5IvTtIhs3l2EjnaEjAJuZMgczT4ZlwB/CSQ==
   dependencies:
-    "@microsoft/api-extractor-model" "7.12.1"
+    "@microsoft/api-extractor-model" "7.12.3"
     "@microsoft/tsdoc" "0.12.24"
-    "@rushstack/node-core-library" "3.35.2"
-    "@rushstack/rig-package" "0.2.9"
-    "@rushstack/ts-command-line" "4.7.8"
+    "@rushstack/node-core-library" "3.36.1"
+    "@rushstack/rig-package" "0.2.11"
+    "@rushstack/ts-command-line" "4.7.9"
     colors "~1.2.1"
     lodash "~4.17.15"
     resolve "~1.17.0"
@@ -741,10 +741,10 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
-"@rushstack/node-core-library@3.35.2":
-  version "3.35.2"
-  resolved "https://registry.yarnpkg.com/@rushstack/node-core-library/-/node-core-library-3.35.2.tgz#21ca879b5051a5ebafa952fafcd648a07a142bcb"
-  integrity sha512-SPd0uG7mwsf3E30np9afCUhtaM1SBpibrbxOXPz82KWV6SQiPUtXeQfhXq9mSnGxOb3WLWoSDe7AFxQNex3+kQ==
+"@rushstack/node-core-library@3.36.1":
+  version "3.36.1"
+  resolved "https://registry.yarnpkg.com/@rushstack/node-core-library/-/node-core-library-3.36.1.tgz#9c1a3d5b5379b8857f8e066f1491b89b9fa0d13e"
+  integrity sha512-YMXJ0bEpxG9AnK1shZTOay5xSIuerzxCV9sscn3xynnndBdma0oE243V79Fb25zzLfkZ1Xg9TbOXc5zmF7NYYA==
   dependencies:
     "@types/node" "10.17.13"
     colors "~1.2.1"
@@ -756,19 +756,18 @@
     timsort "~0.3.0"
     z-schema "~3.18.3"
 
-"@rushstack/rig-package@0.2.9":
-  version "0.2.9"
-  resolved "https://registry.yarnpkg.com/@rushstack/rig-package/-/rig-package-0.2.9.tgz#57ef94e7f7703b18e275b603d3f59a1a16580716"
-  integrity sha512-4tqsZ/m+BjeNAGeAJYzPF53CT96TsAYeZ3Pq3T4tb1pGGM3d3TWfkmALZdKNhpRlAeShKUrb/o/f/0sAuK/1VQ==
+"@rushstack/rig-package@0.2.11":
+  version "0.2.11"
+  resolved "https://registry.yarnpkg.com/@rushstack/rig-package/-/rig-package-0.2.11.tgz#b206f5979c7a04799f277083e585e932259a1fd2"
+  integrity sha512-6Q07ZxjnthXWSXfDy/CgjhhGaqb/0RvZbqWScLr216Cy7fuAAmjbMhE2E53+rjXOsolrS5Ep7Xcl5TQre723cA==
   dependencies:
-    "@types/node" "10.17.13"
     resolve "~1.17.0"
     strip-json-comments "~3.1.1"
 
-"@rushstack/ts-command-line@4.7.8":
-  version "4.7.8"
-  resolved "https://registry.yarnpkg.com/@rushstack/ts-command-line/-/ts-command-line-4.7.8.tgz#3aa77cf544c571be3206fc2bcba20c7a096ed254"
-  integrity sha512-8ghIWhkph7NnLCMDJtthpsb7TMOsVGXVDvmxjE/CeklTqjbbUFBjGXizJfpbEkRQTELuZQ2+vGn7sGwIWKN2uA==
+"@rushstack/ts-command-line@4.7.9":
+  version "4.7.9"
+  resolved "https://registry.yarnpkg.com/@rushstack/ts-command-line/-/ts-command-line-4.7.9.tgz#062aa16b6533af09125284516a774bf9a4d00291"
+  integrity sha512-Jq5O4t0op9xdFfS9RbUV/ZFlAFxX6gdVTY+69UFRTn9pwWOzJR0kroty01IlnDByPCgvHH8RMz9sEXzD9Qxdrg==
   dependencies:
     "@types/argparse" "1.0.38"
     argparse "~1.0.9"
