@@ -1,4 +1,7 @@
-export * from './reporter'
-export * from './formatter'
-export * from './colors'
-export * from './utils'
+import { createReporter } from 'loglin'
+
+export const reporter = createReporter(() => {
+  return (options) => {
+    console.log(options.message)
+  }
+})

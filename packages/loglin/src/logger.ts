@@ -1,85 +1,72 @@
-import { LogLevels, LogLevel, getLevelNumber } from './levels'
-import type { Reporter, LogInfo, LogMeta, LogMessage } from './reporter'
-import { isFiltered } from './filter'
+import type { Reporter, LogInfo, LogMessage } from './reporter'
+import { LogLevel } from './level'
+import type { Filter, FilterInfo } from './filter'
 
 export interface LoggerConfig {
-  level?: LogLevels
   reporters: Reporter[]
+  filters?: Filter[]
 }
 
-export type LogFunction = (message: LogMessage, meta?: LogMeta) => boolean
-export type LogMethods = Record<LogLevel, LogFunction>
-export type CanLog = (minimumLevel: LogLevels) => boolean
-export type Logger = LogMethods & { canLog: CanLog }
+export type LogFunction = (message: LogMessage) => void
+export type Logger = Record<LogLevel, LogFunction>
 
 export function createLogger(config: LoggerConfig): Logger {
   if (!config.reporters || !config.reporters.length) {
     throw new Error('You need to add at least one reporter.')
   }
 
-  const callReporters = (info: LogInfo) =>
-    config.reporters.map((reporter) => {
-      if (
-        reporter.filters &&
-        reporter.filters.length &&
-        isFiltered(reporter.filters, info)
-      )
-        return
+  const checkFilters = (info: FilterInfo) =>
+    config.filters?.every((f) => f(info))
 
-      return reporter.log(info)
-    })
+  const callReporters = (info: LogInfo) => {
+    for (const reporter of config.reporters) {
+      if (reporter.filters) {
+        const canLog = reporter.filters.every((f) => f({ level: info.level }))
+        if (!canLog) continue
+      }
 
-  const levelNumber = getLevelNumber(config.level || LogLevels.Info)
-  const canLog: CanLog = (minimumLevel) =>
-    levelNumber >= getLevelNumber(minimumLevel)
+      reporter.log(info)
+    }
+  }
+
   const log = (info: LogInfo) =>
-    Boolean(canLog(info.level) && callReporters(info))
+    checkFilters({ level: info.level }) && callReporters(info)
 
   return {
-    // Methods
-    fatal: (message, meta) =>
-      log({
-        level: LogLevels.Fatal,
+    fatal: (message) =>
+      !!log({
         message,
-        meta,
+        level: LogLevel.Fatal
       }),
-    error: (message, meta) =>
-      log({
-        level: LogLevels.Error,
+    error: (message) =>
+      !!log({
         message,
-        meta,
+        level: LogLevel.Error
       }),
-    warn: (message, meta) =>
-      log({
-        level: LogLevels.Warn,
+    warn: (message) =>
+      !!log({
         message,
-        meta,
+        level: LogLevel.Warn
       }),
-    log: (message, meta) =>
-      log({
-        level: LogLevels.Log,
+    log: (message) =>
+      !!log({
         message,
-        meta,
+        level: LogLevel.Log
       }),
-    info: (message, meta) =>
-      log({
-        level: LogLevels.Info,
+    info: (message) =>
+      !!log({
         message,
-        meta,
+        level: LogLevel.Info
       }),
-    success: (message, meta) =>
-      log({
-        level: LogLevels.Success,
+    success: (message) =>
+      !!log({
         message,
-        meta,
+        level: LogLevel.Success
       }),
-    debug: (message, meta) =>
-      log({
-        level: LogLevels.Debug,
+    debug: (message) =>
+      !!log({
         message,
-        meta,
-      }),
-    // Utils
-    canLog,
+        level: LogLevel.Debug
+      })
   }
 }

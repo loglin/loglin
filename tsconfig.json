@@ -1,26 +1,22 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "dist",
-    "sourceMap": false,
-    "target": "esnext",
-    "module": "esnext",
+    "target": "ESNext",
+    "module": "ESNext",
     "moduleResolution": "node",
-    "allowJs": false,
     "strict": true,
-    "noUnusedLocals": true,
-    "removeComments": false,
     "esModuleInterop": true,
-    "declaration": true,
-    "declarationMap": true,
-    "lib": ["esnext"],
-    "types": ["node", "jest"],
-    "rootDir": ".",
+    "noUnusedLocals": true,
     "isolatedModules": true,
+    "allowJs": false,
+    "declaration": true,
+    "lib": ["ESNext", "DOM"],
+    "baseUrl": ".",
+    "rootDir": ".",
+    "outDir": "dist",
     "paths": {
       "@loglin/*": ["packages/*/src"],
       "loglin": ["packages/loglin/src"]
     }
   },
-  "include": ["packages/*/src", "packages/*/__tests__", "playground"]
+  "include": ["packages/*/src", "examples"]
 }

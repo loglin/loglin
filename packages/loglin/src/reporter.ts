@@ -1,35 +1,31 @@
-import type { LogLevels } from './levels'
-import type { Formatter } from './formatter'
 import type { Filter } from './filter'
+import type { LogLevel } from './level'
+
+export type LogMessage = unknown
+export type CustomReporterOptions = Record<string, any>
 
 export interface LogInfo {
-  level: LogLevels
+  level: LogLevel
   message: LogMessage
-  meta?: LogMeta
 }
 
-export type LogMessage = any
-export type LogMeta = any
-
-export type CustomReporterOptions = Record<string, any>
 export type ReporterOptions<O extends CustomReporterOptions> = O & {
-  formatter?: Formatter
-  filters?: Filter[]
-}
-
-export interface Reporter {
-  log: ReporterLogFunction
   filters?: Filter[]
 }
 
 export type ReporterLogFunction = (info: LogInfo) => void
-export type ReporterFunction<
-  O extends CustomReporterOptions = CustomReporterOptions
-> = (options?: ReporterOptions<O>) => ReporterLogFunction
+export type ReporterFunction<O extends CustomReporterOptions> = (
+  options?: ReporterOptions<O>
+) => ReporterLogFunction
 
-export type CreatedReporter<
-  O extends CustomReporterOptions = CustomReporterOptions
-> = (options?: ReporterOptions<O>) => Reporter
+export type Reporter = {
+  log: ReporterLogFunction
+  filters: Filter[] | undefined
+}
+
+export type CreatedReporter<O extends CustomReporterOptions> = (
+  options?: ReporterOptions<O>
+) => Reporter
 
 export function createReporter<O extends CustomReporterOptions>(
   reporter: ReporterFunction<O>

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "dependencies": {
+    "loglin": "workspace:*",
+    "@loglin/reporter-console": "workspace:*"
+  }
+}

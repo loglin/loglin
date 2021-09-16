@@ -1,40 +1,19 @@
 {
   "name": "@loglin/reporter-console",
-  "version": "0.0.6",
-  "description": "@loglin/reporter-console",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/loglin/loglin.git",
-    "directory": "packages/reporter-console"
-  },
-  "license": "MIT",
-  "author": "Marvin Rudolph",
-  "main": "dist/reporter-console.cjs.js",
-  "module": "dist/reporter-console.esm.js",
-  "types": "dist/reporter-console.d.ts",
+  "version": "0.0.0",
+  "main": "./dist/reporter-console.js",
+  "module": "./dist/reporter-console.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "dependencies": {
-    "chalk": "^4.1.0",
-    "loglin": "^0.0.6"
+  "exports": {
+    ".": {
+      "import": "./dist/reporter-console.mjs",
+      "require": "./dist/reporter-console.js"
+    }
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "fast",
-    "logger",
-    "node",
-    "simple",
-    "typescript",
-    "types",
-    "reporter",
-    "console",
-    "fancy"
-  ],
   "scripts": {
-    "release": "node updateVersions && node ../../scripts/release.js",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s --commit-path ."
+    "build": "rimraf dist && tsup src/index.ts --format cjs,esm --dts"
   }
 }

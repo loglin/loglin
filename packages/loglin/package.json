@@ -1,36 +1,19 @@
 {
   "name": "loglin",
-  "version": "0.0.6",
-  "description": "loglin",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/loglin/loglin.git",
-    "directory": "packages/loglin"
-  },
-  "license": "MIT",
-  "author": "Marvin Rudolph",
-  "main": "dist/loglin.cjs.js",
-  "module": "dist/loglin.esm.js",
-  "types": "dist/loglin.d.ts",
+  "version": "0.0.0",
+  "main": "./dist/loglin.js",
+  "module": "./dist/loglin.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "access": "public"
+  "exports": {
+    ".": {
+      "import": "./dist/loglin.mjs",
+      "require": "./dist/loglin.js"
+    }
   },
-  "keywords": [
-    "fast",
-    "logger",
-    "node",
-    "simple",
-    "typescript",
-    "types",
-    "core",
-    "console",
-    "pluggable"
-  ],
   "scripts": {
-    "release": "node ../../scripts/release.js",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s --commit-path ."
+    "build": "rimraf dist && tsup src/index.ts --format cjs,esm --dts"
   }
 }

@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`formatError should format error 1`] = `
-"
-
-  at line 1 (path)
-  at line 2 (path)
-"
-`;
