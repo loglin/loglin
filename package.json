@@ -5,7 +5,7 @@
     "build": "pnpm -r --filter ./packages run build",
     "format": "prettier --write --parser typescript \"packages/**/*.ts\"",
     "release": "jiti scripts/release.ts",
-    "publish": "jiti scripts/publish.ts",
+    "publish": "pnpm -r publish --tag next --access public",
     "example:basic": "esmon examples/basic/src/index.ts"
   },
   "husky": {
