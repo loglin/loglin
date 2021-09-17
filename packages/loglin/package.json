@@ -1,6 +1,6 @@
 {
   "name": "loglin",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "./dist/loglin.js",
   "module": "./dist/loglin.mjs",
   "types": "./dist/index.d.ts",
