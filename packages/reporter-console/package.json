@@ -16,5 +16,8 @@
   "scripts": {
     "build": "rimraf dist && tsup src/index.ts --format cjs,esm --dts",
     "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "loglin": "workspace:*"
   }
 }
