@@ -6,5 +6,5 @@ const logger = createLogger({
   filters: [isMinimumLevel(LogLevel.Fatal)]
 })
 
-logger.fatal('fatal')
+logger.fatal('fatal', { someMeta: 'info' })
 logger.debug('debug')

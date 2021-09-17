@@ -1,4 +1,4 @@
-import type { Reporter, LogInfo, LogMessage } from './reporter'
+import type { Reporter, LogInfo, LogMessage, LogMeta } from './reporter'
 import { LogLevel } from './level'
 import type { Filter, FilterInfo } from './filter'
 
@@ -7,7 +7,7 @@ export interface LoggerConfig {
   filters?: Filter[]
 }
 
-export type LogFunction = (message: LogMessage) => void
+export type LogFunction = (message: LogMessage, meta?: LogMeta) => void
 export type Logger = Record<LogLevel, LogFunction>
 
 export function createLogger(config: LoggerConfig): Logger {
@@ -33,40 +33,47 @@ export function createLogger(config: LoggerConfig): Logger {
     checkFilters({ level: info.level }) && callReporters(info)
 
   return {
-    fatal: (message) =>
+    fatal: (message, meta) =>
       !!log({
+        level: LogLevel.Fatal,
         message,
-        level: LogLevel.Fatal
+        meta
       }),
-    error: (message) =>
+    error: (message, meta) =>
       !!log({
+        level: LogLevel.Error,
         message,
-        level: LogLevel.Error
+        meta
       }),
-    warn: (message) =>
+    warn: (message, meta) =>
       !!log({
+        level: LogLevel.Warn,
         message,
-        level: LogLevel.Warn
+        meta
       }),
-    log: (message) =>
+    log: (message, meta) =>
       !!log({
+        level: LogLevel.Log,
         message,
-        level: LogLevel.Log
+        meta
       }),
-    info: (message) =>
+    info: (message, meta) =>
       !!log({
+        level: LogLevel.Info,
         message,
-        level: LogLevel.Info
+        meta
       }),
-    success: (message) =>
+    success: (message, meta) =>
       !!log({
+        level: LogLevel.Success,
         message,
-        level: LogLevel.Success
+        meta
       }),
-    debug: (message) =>
+    debug: (message, meta) =>
       !!log({
+        level: LogLevel.Debug,
         message,
-        level: LogLevel.Debug
+        meta
       })
   }
 }
