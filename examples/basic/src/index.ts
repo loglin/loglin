@@ -1,5 +1,5 @@
 import { createLogger, isMinimumLevel, LogLevel } from 'loglin'
-import { reporter as consoleReporter } from '@loglin/reporter-console'
+import { consoleReporter } from '@loglin/reporter-console'
 
 const logger = createLogger({
   reporters: [consoleReporter()],

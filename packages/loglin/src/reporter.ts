@@ -11,26 +11,12 @@ export interface LogInfo {
   meta?: LogMeta
 }
 
-export type ReporterOptions<O extends CustomReporterOptions> = O & {
+export type ReporterLogFunction = (info: LogInfo) => void
+export interface ReporterOptions {
   filters?: Filter[]
 }
-
-export type ReporterLogFunction = (info: LogInfo) => void
-export type ReporterFunction<O extends CustomReporterOptions> = (
-  options?: ReporterOptions<O>
-) => ReporterLogFunction
 
 export type Reporter = {
   log: ReporterLogFunction
   filters: Filter[] | undefined
-}
-
-export type CreatedReporter<O extends CustomReporterOptions> = (
-  options?: ReporterOptions<O>
-) => Reporter
-
-export function createReporter<O extends CustomReporterOptions>(
-  reporter: ReporterFunction<O>
-): CreatedReporter<O> {
-  return (options) => ({ log: reporter(options), filters: options?.filters })
 }

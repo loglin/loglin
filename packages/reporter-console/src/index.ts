@@ -1,7 +1,8 @@
-import { createReporter } from 'loglin'
+import type { Reporter, ReporterOptions } from 'loglin'
 
-export const reporter = createReporter(() => {
-  return (options) => {
-    console.log(options.message)
+export function consoleReporter(options?: ReporterOptions): Reporter {
+  return {
+    log: ({ message }) => console.log(message),
+    filters: options?.filters
   }
-})
+}
