@@ -1,6 +1,6 @@
 {
   "name": "@loglin/reporter-console",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "license": "MIT",
   "author": "Marvin Rudolph",
   "description": "Console reporter for loglin",
@@ -30,7 +30,7 @@
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
-    "loglin": "^1.1.2"
+    "loglin": "^1.1.3"
   },
   "dependencies": {
     "chalk": "^4.1.2"
