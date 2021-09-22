@@ -21,8 +21,8 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/reporter-console.mjs",
-      "require": "./dist/reporter-console.js"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     }
   },
   "scripts": {

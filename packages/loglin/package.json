@@ -21,8 +21,8 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/loglin.mjs",
-      "require": "./dist/loglin.js"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     }
   },
   "scripts": {
