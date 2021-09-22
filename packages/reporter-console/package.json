@@ -19,5 +19,8 @@
   },
   "peerDependencies": {
     "loglin": "workspace:*"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2"
   }
 }
