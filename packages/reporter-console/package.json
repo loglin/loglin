@@ -13,8 +13,8 @@
     "url": "https://github.com/loglin/loglin/issues"
   },
   "homepage": "https://github.com/loglin/loglin/tree/main",
-  "main": "./dist/reporter-console.js",
-  "module": "./dist/reporter-console.mjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
