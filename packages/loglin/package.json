@@ -1,6 +1,18 @@
 {
   "name": "loglin",
   "version": "1.0.6",
+  "license": "MIT",
+  "author": "Marvin Rudolph",
+  "description": "Super fast, lightweight and extensible logger.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loglin/loglin.git",
+    "directory": "packages/loglin"
+  },
+  "bugs": {
+    "url": "https://github.com/loglin/loglin/issues"
+  },
+  "homepage": "https://github.com/loglin/loglin/tree/main",
   "main": "./dist/loglin.js",
   "module": "./dist/loglin.mjs",
   "types": "./dist/index.d.ts",
@@ -16,5 +28,11 @@
   "scripts": {
     "build": "rimraf dist && tsup src/index.ts --format cjs,esm --dts",
     "prepublishOnly": "npm run build"
-  }
+  },
+  "keywords": [
+    "fast",
+    "lightweight",
+    "logger",
+    "typescript"
+  ]
 }

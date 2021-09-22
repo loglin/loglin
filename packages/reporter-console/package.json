@@ -1,6 +1,18 @@
 {
   "name": "@loglin/reporter-console",
   "version": "1.0.6",
+  "license": "MIT",
+  "author": "Marvin Rudolph",
+  "description": "Console reporter for loglin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loglin/loglin.git",
+    "directory": "packages/reporter-console"
+  },
+  "bugs": {
+    "url": "https://github.com/loglin/loglin/issues"
+  },
+  "homepage": "https://github.com/loglin/loglin/tree/main",
   "main": "./dist/reporter-console.js",
   "module": "./dist/reporter-console.mjs",
   "types": "./dist/index.d.ts",
@@ -22,5 +34,11 @@
   },
   "dependencies": {
     "chalk": "^4.1.2"
-  }
+  },
+  "keywords": [
+    "logger",
+    "fancy",
+    "reporter",
+    "console"
+  ]
 }
