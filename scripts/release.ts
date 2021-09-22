@@ -11,18 +11,23 @@ async function main() {
   const packages = await getPackages()
   const { version } = await fs.readJSON('package.json')
 
-  /*for (const packageName of packages) {
+  for (const packageName of packages) {
     const pkgPath = path.join('packages', packageName, 'package.json')
     const pkg = await fs.readJSON(pkgPath)
-    const deps = pkg.dependencies
-    if (!deps) continue
+    const deps = ['dependencies', 'peerDependencies']
 
-    for (const depName of Object.keys(deps)) {
-      pkg.dependencies[depName] = `v${version}`
+    for (const name of deps) {
+      if (!pkg[name]) continue
+      const depNames = Object.keys(pkg[name])
+
+      for (const depName of depNames) {
+        if (depName !== 'loglin' && !depName.startsWith('@loglin/')) continue
+        pkg[name][depName] = `^${version}`
+      }
     }
 
     await fs.writeJSON(pkgPath, pkg, { spaces: 2 })
-  }*/
+  }
 
   await $`git add .`
   await $`git commit -m "chore: release v${version}"`
