@@ -30,7 +30,9 @@ export function createLogger(config: LoggerConfig): Logger {
   }
 
   const log = (info: LogInfo) =>
-    checkFilters({ level: info.level }) && callReporters(info)
+    (!config.filters ||
+      (config.filters && checkFilters({ level: info.level }))) &&
+    callReporters(info)
 
   return {
     fatal: (message, meta) =>
