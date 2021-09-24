@@ -88,13 +88,29 @@ Example:
 logger.info('Received info', { name: 'Foo Bar' })
 ```
 
+## Log Levels
+
+- `LogLevel.Fatal`
+- `LogLevel.Error`
+- `LogLevel.Warn`
+- `LogLevel.Log`
+- `LogLevel.Info`
+- `LogLevel.Success`
+- `LogLevel.Debug`
+
 ## Available Reporters
 
 - [Console Reporter](packages/reporter-console)
 
 ## Available Filters
 
-- `isMinimumLevel`
+### `isMinimumLevel(level)`
+
+#### `level`
+
+- **Type:** `LogLevel`
+
+Minimum level where the logger should execute the log function. Can be any of the [Log Levels](#log-levels).
 
 ## API
 
@@ -113,7 +129,7 @@ Specify the reporters the logger should use. **Minimum one is required**.
 - **Default:** `[]`
 
 Global filters for filtering out logs of **all** reporters.
-Perfect for filtering logs based on the log level. See [Available Filters](#available-filters).
+Perfect for filtering logs based on the log level.<br>See [Available Filters](#available-filters).
 
 ## License
 
