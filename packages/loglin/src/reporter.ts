@@ -4,7 +4,6 @@ import type { Formatter } from './formatter'
 
 export type LogMessage = unknown
 export type LogMeta = unknown
-export type CustomReporterOptions = Record<string, any>
 
 export interface LogInfo {
   level: LogLevel
