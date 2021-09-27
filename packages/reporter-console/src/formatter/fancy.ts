@@ -1,5 +1,4 @@
 import { Formatter, LogLevel } from 'loglin'
-import { sep } from 'path'
 import {
   defaultColors,
   LevelColors,
@@ -8,6 +7,7 @@ import {
   chalkBgColor,
   chalkColor
 } from '../colors'
+import { formatStack } from '../stack'
 
 export function fancyFormatter(options?: { colors: ColorsConfig }): Formatter {
   const colors = options?.colors ? mergeColors(options.colors) : defaultColors
@@ -24,7 +24,7 @@ export function fancyFormatter(options?: { colors: ColorsConfig }): Formatter {
     if (message instanceof Error) {
       fancyMessage =
         (textColor ? chalkColor(textColor)(message.message) : message.message) +
-        formatError(message, level, colors)
+        colorStack(message, level, colors)
     } else if (textColor) {
       fancyMessage = chalkColor(textColor)(message)
     }
@@ -41,37 +41,20 @@ export function createLabel(level: LogLevel, colors: LevelColors) {
   )
 }
 
-export function parseStack(stack: string) {
-  const cwd = process.cwd() + sep
+export function colorStack(error: Error, level: LogLevel, colors: LevelColors) {
+  const stack = formatStack(error)
+  if (!stack) return
 
-  return stack
-    .split('\n')
-    .splice(1)
-    .map((l) => l.trim().replace('file://', '').replace(cwd, ''))
-}
-
-export function formatError(
-  error: Error,
-  level: LogLevel,
-  colors: LevelColors
-) {
-  if (!error.stack) return
-
-  const stack =
-    '\n\n' +
-    parseStack(error.stack)
-      .map(
-        (line) =>
-          '  ' +
-          line
-            .replace(/^at +/, (m) => chalkColor(colors[level].stackAtColor)(m))
-            .replace(
-              /\((.+)\)/,
-              (_, m) => `(${chalkColor(colors[level].stackFileColor)(m)})`
-            )
+  return (
+    stack
+      .map((line) =>
+        line
+          .replace(/^  at +/, (m) => chalkColor(colors[level].stackAtColor)(m))
+          .replace(
+            /\((.+)\)/,
+            (_, m) => `(${chalkColor(colors[level].stackFileColor)(m)})`
+          )
       )
-      .join('\n') +
-    '\n'
-
-  return stack
+      .join('\n') + '\n'
+  )
 }
