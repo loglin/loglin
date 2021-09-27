@@ -1,6 +1,6 @@
 {
   "name": "loglin",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "license": "MIT",
   "author": "Marvin Rudolph",
   "description": "Super fast, lightweight and extensible logger.",
