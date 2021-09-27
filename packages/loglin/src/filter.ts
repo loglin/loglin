@@ -9,4 +9,4 @@ export type Filter = (info: FilterInfo) => boolean
 export const isMinimumLevel =
   (miniumLevel: LogLevel): Filter =>
   ({ level }) =>
-    logLevels[level] >= logLevels[miniumLevel]
+    logLevels[miniumLevel] >= logLevels[level]
