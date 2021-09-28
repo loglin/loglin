@@ -2,6 +2,9 @@
 
 > Reporter for logging to the console
 
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+
 ## License
 
 MIT
