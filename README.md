@@ -135,7 +135,7 @@ Perfect for filtering logs based on the log level.<br>See [Available Filters](#a
 
 MIT
 
-[npm-version-src]: https://flat.badgen.net/npm/v/loglin/next
+[npm-version-src]: https://flat.badgen.net/npm/v/loglin/latest
 [npm-version-href]: https://npmjs.com/package/loglin
 
 [npm-downloads-src]: https://flat.badgen.net/npm/dt/loglin
