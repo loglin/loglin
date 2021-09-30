@@ -6,7 +6,8 @@
     "format": "prettier --write --parser typescript \"packages/**/*.ts\"",
     "release": "jiti scripts/release.ts",
     "ci:publish": "npx pnpm -r publish --access public --no-git-checks",
-    "example:basic": "esmon examples/basic/src/index.ts"
+    "example:basic": "esmon examples/basic/src/index.ts",
+    "test": "jest"
   },
   "husky": {
     "hooks": {
@@ -20,6 +21,7 @@
     ]
   },
   "devDependencies": {
+    "@types/jest": "^27.0.2",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
     "bumpp": "^7.1.1",
@@ -32,10 +34,13 @@
     "esmon": "^1.1.0",
     "fs-extra": "^10.0.0",
     "husky": "^7.0.2",
+    "jest": "^27.2.4",
     "jiti": "^1.12.0",
     "lint-staged": "^11.1.2",
     "prettier": "^2.4.1",
     "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.5",
+    "ts-node": "^10.2.1",
     "tsup": "^4.14.0",
     "typescript": "^4.4.2",
     "zx": "^4.2.0"
